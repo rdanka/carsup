@@ -4,4 +4,23 @@ html, body {
     margin: 0;
     background-color: #F5F7FB;
     font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
 }
+
+body {
+    font-size: 1.6rem;
+}
+
+:root {
+    --purple: #742CDF;
+    --grey: #A3A3B2;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
