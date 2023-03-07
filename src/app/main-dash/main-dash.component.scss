@@ -1,0 +1,15 @@
+.dash-container {
+    .small-stats {
+        margin: 1rem 3rem;
+
+        &-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #121219;
+            margin-bottom: 2rem;
+        }
+        overall-stats {
+            margin-top: 2rem;
+        }
+    }
+}

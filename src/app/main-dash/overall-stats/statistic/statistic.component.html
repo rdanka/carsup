@@ -1,9 +1,13 @@
 <div class="statistic-container">
     <div class="icon">
-
+        <svg class="icon icon-automobile, car" [attr.viewBox]="viewBox" [ngStyle]="{'fill': color}">
+            <path [attr.d]="icon"></path>
+        </svg>
+        <div class="circle" [ngStyle]="{'background-color': color, 'opacity': .3}">
+        </div>
     </div>
     <div class="text">
-        <span class="value">{{ value}}</span>
+        <span class="value">{{ value }}</span>
         <span class="title">{{ title }}</span>
     </div>
 </div>

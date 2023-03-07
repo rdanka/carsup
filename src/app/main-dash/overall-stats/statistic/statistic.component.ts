@@ -10,4 +10,5 @@ export class StatisticComponent {
   @Input() value: number = 0;
   @Input() color: string = '';
   @Input() icon: string = '';
+  @Input() viewBox: string = '';
 }
