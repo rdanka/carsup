@@ -1,7 +1,17 @@
 .dash-container {
-    .small-stats {
+    .stats {
         margin: 1rem 3rem;
+    }
 
+    .below {
+        margin-top: 6rem;
+
+        div {
+            display: flex;
+        }
+    }
+
+    .small-stats {
         &-title {
             font-size: 2rem;
             font-weight: 600;

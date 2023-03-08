@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    
     statistic {
         margin: 0 1rem;
     }
@@ -12,6 +13,7 @@
     }
 
 }
+
 
 // on mobile make the width 100% and the flex column    
 @media (max-width: 768px) {
