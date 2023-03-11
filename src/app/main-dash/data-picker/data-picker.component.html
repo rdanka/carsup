@@ -1,21 +1,15 @@
 <div class="data-picker">
     <div class="row">
-        <span class="title">Munkafelvevő</span>
-        <input type="checkbox" id="switch1" />
-                <label for="switch1">Toggle</label>
+        <span class="title">{{ title }}</span>
+        <input type="checkbox" [id]="'switchall'+ title" (click)="onToggleAll($event)" checked/>
+        <label [for]="'switchall'+ title">Toggle</label>
     </div>
     <div class="row">
         <ul>
-            <li>
-                <span >Munkafelvevő</span>
-                <input type="checkbox" id="switch" />
-                <label for="switch">Toggle</label>
-            </li>
-            <li>
-                <span>Valami</span>
-            </li>
-            <li>
-                <span>Valami</span>
+            <li *ngFor="let option of options; index as i">
+                {{ option.name }}
+                <input type="checkbox" [id]="'switch'+title +i" (click)="onToggle(option)" [(checked)]="option.isToggled"/>
+                <label [for]="'switch'+title +i">Toggle</label>
             </li>
         </ul>
     </div>  

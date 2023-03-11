@@ -1,14 +1,28 @@
-.data-picker {
+:host {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    padding: 1.5rem 1rem;
     border-radius: 10px;
     color: #000;
     width: fit-content;
     min-width: 26rem;
     box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+
+}
+
+.data-picker {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    color: #000;
+    width: fit-content;
+    min-width: 26rem;
+
 
     .row {
         display: flex;

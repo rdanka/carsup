@@ -7,8 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class StatisticComponent {
   @Input() title: string = '';
-  @Input() value: number = 0;
+  @Input() value: number | null  = 0;
   @Input() color: string = '';
   @Input() icon: string = '';
   @Input() viewBox: string = '';
+  @Input() suffix?: string = '';
 }
