@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import Chart from 'chart.js/auto';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'bar-chart',
@@ -7,41 +8,77 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent implements OnInit {
+  @Input() labels: string[] = [];
+  @Input() wageProfit: number[] = [];
+  @Input() partProfit: number[] = [];
+  @Input() partPrice: number[] = [];
+  chart: any;
 
-   chart: any ;
+  constructor(private readonly dataService: DataService) { }
 
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.createChart();
+    this.dataService.toggledItem.subscribe((data: any) => {
+      console.log(data);
+      /* this.labels.splice(0,this.labels.length);
+      this.labels.push(...data);  */
+      this.chart.update();
+    })
   }
 
-   createChart(){
-  
-    this.chart = new Chart("MyChart", {
-      type: 'bar', //this denotes tha type of chart
 
-      data: {// values on X-Axis
-        labels: ['2022-05-10', '2022-05-11', '2022-05-12','2022-05-13',
-								 '2022-05-14', '2022-05-15', '2022-05-16','2022-05-17', ], 
-	       datasets: [
+
+  createChart() {
+    this.chart = new Chart("MyChart", {
+      type: 'bar',
+      data: {
+        labels: this.labels, 
+         datasets: [
           {
-            label: "Sales",
-            data: ['467','576', '572', '79', '92',
-								 '574', '573', '576'],
-            backgroundColor: 'blue'
+            label: "Munkadíj nyereség",
+            data: ['542', '542', '536', '327', '17',
+            '0.00', '538', '541'],
+            backgroundColor: '#FF6384'
           },
           {
-            label: "Profit",
+            label: "Alkatrész beszerzési ár",
             data: ['542', '542', '536', '327', '17',
-									 '0.00', '538', '541'],
-            backgroundColor: 'limegreen'
+                   '0.00', '538', '541'],
+            backgroundColor: '#36A2EB'
+          },
+          {
+            label: "Alkatrész nyereség",
+            data: ['542', '542', '536', '327', '17',
+                   '0.00', '538', '541'],
+            backgroundColor: '#4BC0C0'
           }  
         ]
       },
       options: {
-        aspectRatio:2.5
+        plugins: {
+          title: {
+            display: false,
+          },
+        },
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true,
+          },
+          y: {
+            stacked: true
+          }
+        }
       }
-      
     });
+    
+  }
+
+  doStuff() {
+    this.chart.update();
+    this.chart.render();
   }
 
 }
+
+

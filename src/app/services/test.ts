@@ -13,7 +13,7 @@ export const test: any = {
                     "partsIncome": 472,
                     "partsPurchasePrice": 403,
                     "partsProfit": 69,
-                    "parstsProfitPercent": 17.1,
+                    "partsProfitPercent": 17.1,
                     "totalIncome": 222345
                 },
                 {
@@ -23,7 +23,7 @@ export const test: any = {
                     "partsIncome": 6600,
                     "partsPurchasePrice": 3022,
                     "partsProfit": 3578,
-                    "parstsProfitPercent": 118.4,
+                    "partsProfitPercent": 118.4,
                     "totalIncome": 82553
                 },
                 {
@@ -33,7 +33,7 @@ export const test: any = {
                     "partsIncome": 3420,
                     "partsPurchasePrice": 1693,
                     "partsProfit": 1727,
-                    "parstsProfitPercent": 102.0,
+                    "partsProfitPercent": 102.0,
                     "totalIncome": 263903
                 },
                 {
@@ -43,7 +43,7 @@ export const test: any = {
                     "partsIncome": 53070,
                     "partsPurchasePrice": 22099,
                     "partsProfit": 30971,
-                    "parstsProfitPercent": 140.2,
+                    "partsProfitPercent": 140.2,
                     "totalIncome": 346760
                 }
             ]
@@ -61,7 +61,7 @@ export const test: any = {
                     "partsIncome": 499796,
                     "partsPurchasePrice": 269275,
                     "partsProfit": 230521,
-                    "parstsProfitPercent": 86,
+                    "partsProfitPercent": 86,
                     "totalIncome": 441927
                 },
                 {
@@ -71,7 +71,7 @@ export const test: any = {
                     "partsIncome": 23025,
                     "partsPurchasePrice": 11108,
                     "partsProfit": 11917,
-                    "parstsProfitPercent": 107,
+                    "partsProfitPercent": 107,
                     "totalIncome": 33688
                 },
                 {
@@ -81,7 +81,7 @@ export const test: any = {
                     "partsIncome": 0,
                     "partsPurchasePrice": 0,
                     "partsProfit": 0,
-                    "parstsProfitPercent": 0,
+                    "partsProfitPercent": 0,
                     "totalIncome": 10000
                 },
                 {
@@ -91,7 +91,7 @@ export const test: any = {
                     "partsIncome": 0,
                     "partsPurchasePrice": 0,
                     "partsProfit": 0,
-                    "parstsProfitPercent": 0,
+                    "partsProfitPercent": 0,
                     "totalIncome": 164498
                 },
                 {
@@ -101,7 +101,7 @@ export const test: any = {
                     "partsIncome": 443066,
                     "partsPurchasePrice": 226355,
                     "partsProfit": 216711,
-                    "parstsProfitPercent": 96,
+                    "partsProfitPercent": 96,
                     "totalIncome": 492244
                 },
                 {
@@ -111,7 +111,7 @@ export const test: any = {
                     "partsIncome": 0,
                     "partsPurchasePrice": 0,
                     "partsProfit": 0,
-                    "parstsProfitPercent": 0,
+                    "partsProfitPercent": 0,
                     "totalIncome": 21048
                 },
                 {
@@ -121,7 +121,7 @@ export const test: any = {
                     "partsIncome": 860685,
                     "partsPurchasePrice": 483256,
                     "partsProfit": 377429,
-                    "parstsProfitPercent": 78,
+                    "partsProfitPercent": 78,
                     "totalIncome": 812905
                 }
             ]

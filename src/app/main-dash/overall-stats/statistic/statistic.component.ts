@@ -12,4 +12,5 @@ export class StatisticComponent {
   @Input() icon: string = '';
   @Input() viewBox: string = '';
   @Input() suffix?: string = '';
+  
 }

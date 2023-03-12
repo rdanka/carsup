@@ -10,6 +10,7 @@ export class DataPickerComponent {
   @Input() title!: string;
   @Input() options!: any[];
   @Output() onToggleEmitter = new EventEmitter<string>();
+  @Output() onToggleAllEmitter = new EventEmitter<boolean>();
   
   constructor() { }
 
@@ -22,5 +23,6 @@ export class DataPickerComponent {
     this.options.forEach(element => {
       element.isToggled = (checked.target as HTMLInputElement).checked;
     });
+    this.onToggleAllEmitter.emit((checked.target as HTMLInputElement).checked);
   }
 }
