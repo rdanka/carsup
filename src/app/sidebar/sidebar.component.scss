@@ -8,6 +8,12 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
+    transition: width .4s;
+
+    &.closed {
+        width: 9rem;
+        overflow: hidden;
+    }
 
     .logo {
         display: flex;
@@ -46,10 +52,37 @@
             text-align: center;
 
             li {
+                justify-content: space-evenly;
+                display: flex;
                 color: var(--grey);
                 cursor: pointer;
                 padding: 2rem;
                 text-align: left;
+
+                span {
+                    svg {
+                        font-size: 1.8rem;
+
+                    }
+
+                }
+                &:hover {
+                    background-color: #dad9d9;
+                    color: var(--purple);
+                    span {
+                        svg {
+                            color: var(--purple);
+                        }
+                    }
+                }
+
+                &.active {
+                    span {
+                        svg {
+                            color: var(--purple);
+                        }
+                    }
+                }
             }
         }
     }
@@ -66,7 +99,7 @@
             text-align: center;
             width: 90%;
             height: 100%;
-            background-color: var(--purple);
+            background-color: #2DAB31;
             border: none;
             border-radius: 10px;
             font: inherit;

@@ -1,53 +1,6 @@
 export const test: any = {
     "mechanics": [
-        {
-            "name": "Rauscher Zsolt",
-            "totalCars": 80,
-            "totalHours": 76.67,
-            "lostTime": 48.69,
-            "employers": [
-                {
-                    "name": "Muranyi Róbert",
-                    "wageIncome": 327966,
-                    "wageProfit": 222276,
-                    "partsIncome": 472,
-                    "partsPurchasePrice": 403,
-                    "partsProfit": 69,
-                    "partsProfitPercent": 17.1,
-                    "totalIncome": 222345
-                },
-                {
-                    "name":"Rauscher Zsolt",
-                    "wageIncome": 120455,
-                    "wageProfit": 78975,
-                    "partsIncome": 6600,
-                    "partsPurchasePrice": 3022,
-                    "partsProfit": 3578,
-                    "partsProfitPercent": 118.4,
-                    "totalIncome": 82553
-                },
-                {
-                    "name": "Bányai Gibárt",
-                    "wageIncome": 429976,
-                    "wageProfit": 262176,
-                    "partsIncome": 3420,
-                    "partsPurchasePrice": 1693,
-                    "partsProfit": 1727,
-                    "partsProfitPercent": 102.0,
-                    "totalIncome": 263903
-                },
-                {
-                    "name": "Kisbenedek Gábor",
-                    "wageIncome": 481419,
-                    "wageProfit": 315789,
-                    "partsIncome": 53070,
-                    "partsPurchasePrice": 22099,
-                    "partsProfit": 30971,
-                    "partsProfitPercent": 140.2,
-                    "totalIncome": 346760
-                }
-            ]
-        },
+
         {
             "name":"Bányai Edvin",
             "totalCars": 45,
@@ -125,7 +78,55 @@ export const test: any = {
                     "totalIncome": 812905
                 }
             ]
-        }
+        },
+        {
+            "name": "Rauscher Zsolt",
+            "totalCars": 80,
+            "totalHours": 76.67,
+            "lostTime": 48.69,
+            "employers": [
+                {
+                    "name": "Muranyi Róbert",
+                    "wageIncome": 327966,
+                    "wageProfit": 222276,
+                    "partsIncome": 472,
+                    "partsPurchasePrice": 403,
+                    "partsProfit": 69,
+                    "partsProfitPercent": 17.1,
+                    "totalIncome": 222345
+                },
+                {
+                    "name":"Rauscher Zsolt",
+                    "wageIncome": 120455,
+                    "wageProfit": 78975,
+                    "partsIncome": 6600,
+                    "partsPurchasePrice": 3022,
+                    "partsProfit": 3578,
+                    "partsProfitPercent": 118.4,
+                    "totalIncome": 82553
+                },
+                {
+                    "name": "Bányai Gibárt",
+                    "wageIncome": 429976,
+                    "wageProfit": 262176,
+                    "partsIncome": 3420,
+                    "partsPurchasePrice": 1693,
+                    "partsProfit": 1727,
+                    "partsProfitPercent": 102.0,
+                    "totalIncome": 263903
+                },
+                {
+                    "name": "Kisbenedek Gábor",
+                    "wageIncome": 481419,
+                    "wageProfit": 315789,
+                    "partsIncome": 53070,
+                    "partsPurchasePrice": 22099,
+                    "partsProfit": 30971,
+                    "partsProfitPercent": 140.2,
+                    "totalIncome": 346760
+                }
+            ]
+        },
     ]
 }
 

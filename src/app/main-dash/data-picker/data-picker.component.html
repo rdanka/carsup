@@ -8,8 +8,8 @@
         <ul>
             <li *ngFor="let option of options; index as i">
                 {{ option.name }}
-                <input type="checkbox" [id]="'switch'+title +i" (click)="onToggle(option)" [(checked)]="option.isToggled"/>
-                <label [for]="'switch'+title +i">Toggle</label>
+                <input type="checkbox" [id]="'switch'+ title +i" (click)="onToggle(option)" [(checked)]="option.isToggled"/>
+                <label [for]="'switch'+ title +i">Toggle</label>
             </li>
         </ul>
     </div>  

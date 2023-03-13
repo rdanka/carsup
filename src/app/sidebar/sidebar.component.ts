@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  toggled = false;
+
   constructor() { }
 
   toggleSidebar() {
-    alert('toggle sidebar');
+    this.toggled = !this.toggled;
+    console.log(this.toggled)
   }
 }

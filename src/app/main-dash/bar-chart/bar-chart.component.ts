@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import Chart from 'chart.js/auto';
 import { DataService } from 'src/app/services/data.service';
 
@@ -7,11 +7,8 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss']
 })
-export class BarChartComponent implements OnInit {
+export class BarChartComponent implements OnInit, AfterViewInit {
   @Input() labels: string[] = [];
-  @Input() wageProfit: number[] = [];
-  @Input() partProfit: number[] = [];
-  @Input() partPrice: number[] = [];
   chart: any;
 
   constructor(private readonly dataService: DataService) { }
@@ -19,37 +16,60 @@ export class BarChartComponent implements OnInit {
   ngOnInit(): void {
     this.createChart();
     this.dataService.toggledItem.subscribe((data: any) => {
-      console.log(data);
-      /* this.labels.splice(0,this.labels.length);
-      this.labels.push(...data);  */
-      this.chart.update();
+      const labels = data;
+      this.chart.data.labels = labels.sort();
+      this.chart.update(''); // none
     })
+
+    this.dataService.wageProfit.subscribe((data: any) => {
+      console.log(data)
+      const wageProfit = data;
+      this.chart.data.datasets[0].data = wageProfit;
+      this.chart.update(''); // none
+    })
+
+    this.dataService.partProfit.subscribe((data: any) => {
+      const partProfit = data;
+      this.chart.data.datasets[2].data = partProfit;
+      this.chart.update(''); // none
+    })
+
+    this.dataService.partPrice.subscribe((data: any) => {
+      const partPrice = data;
+      this.chart.data.datasets[1].data = partPrice;
+      this.chart.update(''); // none
+    })
+
+    this.dataService.toggledItem.next(this.labels);
+    this.dataService.wageProfit.next([1139732, 879216]);
+    this.dataService.partProfit.next([989994, 27217]);
+    this.dataService.partPrice.next([836578, 36345]);
+    
   }
 
-
+  ngAfterViewInit() {
+    this.chart.update();
+  }
 
   createChart() {
     this.chart = new Chart("MyChart", {
       type: 'bar',
       data: {
-        labels: this.labels, 
+        labels: [], 
          datasets: [
           {
             label: "Munkadíj nyereség",
-            data: ['542', '542', '536', '327', '17',
-            '0.00', '538', '541'],
+            data: [1139732, 879216],
             backgroundColor: '#FF6384'
           },
           {
             label: "Alkatrész beszerzési ár",
-            data: ['542', '542', '536', '327', '17',
-                   '0.00', '538', '541'],
+            data: [989994, 27217],
             backgroundColor: '#36A2EB'
           },
           {
             label: "Alkatrész nyereség",
-            data: ['542', '542', '536', '327', '17',
-                   '0.00', '538', '541'],
+            data: [836578, 36345],
             backgroundColor: '#4BC0C0'
           }  
         ]
@@ -64,9 +84,18 @@ export class BarChartComponent implements OnInit {
         scales: {
           x: {
             stacked: true,
+            title: {
+              display: true,
+              text: 'Szerelő'
+            }
           },
           y: {
-            stacked: true
+            stacked: true,
+            ticks: {
+              callback: (value, index, values) => {
+                  return this.formatter.format(value as number);
+              }
+            }
           }
         }
       }
@@ -74,10 +103,12 @@ export class BarChartComponent implements OnInit {
     
   }
 
-  doStuff() {
-    this.chart.update();
-    this.chart.render();
-  }
+  formatter = new Intl.NumberFormat('hu-HU', {
+    style: 'currency',
+    currency: 'HUF',
+    minimumFractionDigits: 0, 
+    maximumFractionDigits: 0, 
+  });
 
 }
 

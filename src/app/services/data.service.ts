@@ -8,7 +8,10 @@ import { of, Subject } from 'rxjs';
 export class DataService {
 
   toggledItem = new Subject();
-  
+  wageProfit = new Subject();
+  partProfit = new Subject();
+  partPrice = new Subject();
+
   constructor() { }
 
   public loadInitialData() {
