@@ -1,0 +1,49 @@
+<div class="time-selector-container">
+  <div class="time-controller-container">
+    <span class="time-frame-text">2024. május</span>
+    <div class="arrow-container">
+      <span> < </span>
+      <span> > </span>
+    </div>
+  </div>
+  <div class="selector-container">
+    <form [formGroup]="form">
+      <label>
+        <input
+          type="radio"
+          value="Napi"
+          name="timeFrame"
+          formControlName="timeFrame"
+        />
+        <span>Napi</span>
+      </label>
+      <label>
+        <input
+          type="radio"
+          value="Heti"
+          name="timeFrame"
+          formControlName="timeFrame"
+        />
+        <span>Heti</span>
+      </label>
+      <label>
+        <input
+          type="radio"
+          value="Havi"
+          name="timeFrame"
+          formControlName="timeFrame"
+        />
+        <span>Havi</span>
+      </label>
+      <label>
+        <input
+          type="radio"
+          value="Éves"
+          name="timeFrame"
+          formControlName="timeFrame"
+        />
+        <span>Éves</span>
+      </label>
+    </form>
+  </div>
+</div>

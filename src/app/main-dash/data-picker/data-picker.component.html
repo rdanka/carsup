@@ -4,10 +4,10 @@
         <input type="checkbox" [id]="'switchall'+ title" (click)="onToggleAll($event)" checked/>
         <label [for]="'switchall'+ title">Toggle</label>
     </div>
-    <div class="row">
+    <div class="row below">
         <ul>
             <li *ngFor="let option of options; index as i">
-                {{ option.name }}
+                {{ option.nev }}
                 <input type="checkbox" [id]="'switch'+ title +i" (click)="onToggle(option)" [(checked)]="option.isToggled"/>
                 <label [for]="'switch'+ title +i">Toggle</label>
             </li>

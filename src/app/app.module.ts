@@ -12,6 +12,8 @@ import { DataPickerComponent } from './main-dash/data-picker/data-picker.compone
 import { BarChartComponent } from './main-dash/bar-chart/bar-chart.component';
 import { MechanicsDashboardComponent } from './mechanics-dashboard/mechanics-dashboard.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { TimeSelectorComponent } from './main-dash/time-selector/time-selector.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -22,6 +24,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
         DataPickerComponent,
         BarChartComponent,
         MechanicsDashboardComponent,
+        TimeSelectorComponent
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+    bootstrap: [AppComponent], imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
