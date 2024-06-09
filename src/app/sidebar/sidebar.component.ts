@@ -3,15 +3,19 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
   toggled = false;
+  mobileToggled = false;
 
-  constructor() { }
+  constructor() {}
 
   toggleSidebar() {
     this.toggled = !this.toggled;
-    console.log(this.toggled)
+  }
+
+  toggleMobileSidebar() {
+    this.mobileToggled = !this.mobileToggled;
   }
 }

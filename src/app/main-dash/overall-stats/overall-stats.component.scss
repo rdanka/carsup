@@ -1,34 +1,14 @@
 .stat-container {
-    display: flex;
-    margin-top: 1rem;
-    
-    statistic {
-        margin: 0 1rem;
-    }
+  display: flex;
+  margin-top: 1rem;
 
-    statistic:first-of-type {
-        margin-right: 1rem;
-        margin-left: 0;
-    }
+  statistic {
+    margin: 0 1rem;
+  }
 
-}
+  statistic:first-of-type {
+    margin-right: 1rem;
+    margin-left: 0;
+  }
 
-
-// on mobile make the width 100% and the flex column    
-@media (max-width: 768px) {
-    .stat-container {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-
-        statistic {
-            margin: 0 0;
-            margin-bottom: 1rem;
-        }
-
-        statistic:first-of-type {
-            margin-right: 0;
-            margin-left: 0;
-        }
-    }
 }

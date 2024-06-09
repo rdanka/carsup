@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { OverallStatsComponent } from './main-dash/overall-stats/overall-stats.c
 import { StatisticComponent } from './main-dash/overall-stats/statistic/statistic.component';
 import { DataPickerComponent } from './main-dash/data-picker/data-picker.component';
 import { BarChartComponent } from './main-dash/bar-chart/bar-chart.component';
+import { MechanicsDashboardComponent } from './mechanics-dashboard/mechanics-dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,11 @@ import { BarChartComponent } from './main-dash/bar-chart/bar-chart.component';
     OverallStatsComponent,
     StatisticComponent,
     DataPickerComponent,
-    BarChartComponent
+    BarChartComponent,
+    MechanicsDashboardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
