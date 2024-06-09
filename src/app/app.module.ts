@@ -11,21 +11,17 @@ import { StatisticComponent } from './main-dash/overall-stats/statistic/statisti
 import { DataPickerComponent } from './main-dash/data-picker/data-picker.component';
 import { BarChartComponent } from './main-dash/bar-chart/bar-chart.component';
 import { MechanicsDashboardComponent } from './mechanics-dashboard/mechanics-dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    SidebarComponent,
-    MainDashComponent,
-    OverallStatsComponent,
-    StatisticComponent,
-    DataPickerComponent,
-    BarChartComponent,
-    MechanicsDashboardComponent,
-  ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        SidebarComponent,
+        MainDashComponent,
+        OverallStatsComponent,
+        StatisticComponent,
+        DataPickerComponent,
+        BarChartComponent,
+        MechanicsDashboardComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
