@@ -5,14 +5,16 @@
   </div>
   <div class="stats below">
     <span class="small-stats-title">Részletes adatok</span>
-    <div>
+    <div class="flex-container">
       <data-picker
         [title]="'Munkafelvevő'"
         [options]="employers$ | async"
         (onToggleEmitter)="onToggle($event, 'employer')"
         (onToggleAllEmitter)="onToggleAll($event, 'employer')"
       ></data-picker>
-      <bar-chart [labels]="toggledMechanics"></bar-chart>
+      <bar-chart 
+        [labels]="toggledMechanics$"
+      ></bar-chart>
       <data-picker
         [title]="'Szerelő'"
         [options]="mechanics$ | async"

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import Chart from 'chart.js/auto';
+import { Observable, of } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -8,43 +9,15 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent implements OnInit, AfterViewInit {
-  @Input() labels: string[] = [];
+  @Input() labels: Observable<string[]> = of([]);
   chart: any;
+  private _labels: string[] = [];
 
   constructor(private readonly dataService: DataService) { }
 
   ngOnInit(): void {
     this.createChart();
-    this.dataService.toggledItem.subscribe((data: any) => {
-      const labels = data;
-      this.chart.data.labels = labels.sort();
-      this.chart.update(''); // none
-    })
-
-    this.dataService.wageProfit.subscribe((data: any) => {
-      console.log(data)
-      const wageProfit = data;
-      this.chart.data.datasets[0].data = wageProfit;
-      this.chart.update(''); // none
-    })
-
-    this.dataService.partProfit.subscribe((data: any) => {
-      const partProfit = data;
-      this.chart.data.datasets[2].data = partProfit;
-      this.chart.update(''); // none
-    })
-
-    this.dataService.partPrice.subscribe((data: any) => {
-      const partPrice = data;
-      this.chart.data.datasets[1].data = partPrice;
-      this.chart.update(''); // none
-    })
-
-    this.dataService.toggledItem.next(this.labels);
-    this.dataService.wageProfit.next([1139732, 879216]);
-    this.dataService.partProfit.next([989994, 27217]);
-    this.dataService.partPrice.next([836578, 36345]);
-    
+    this.labels.subscribe((labels => this._labels = labels));
   }
 
   ngAfterViewInit() {
@@ -55,11 +28,11 @@ export class BarChartComponent implements OnInit, AfterViewInit {
     this.chart = new Chart("MyChart", {
       type: 'bar',
       data: {
-        labels: [], 
+        labels: ['asd','asd'], 
          datasets: [
           {
             label: "Munkadíj nyereség",
-            data: [1139732, 879216],
+            data: [1139732, 879216, 88888],
             backgroundColor: '#FF6384'
           },
           {
@@ -68,7 +41,7 @@ export class BarChartComponent implements OnInit, AfterViewInit {
             backgroundColor: '#36A2EB'
           },
           {
-            label: "Alkatrész nyereség",
+            label: "Alkatrész árrés",
             data: [836578, 36345],
             backgroundColor: '#4BC0C0'
           }  
@@ -80,7 +53,6 @@ export class BarChartComponent implements OnInit, AfterViewInit {
             display: false,
           },
         },
-        responsive: true,
         scales: {
           x: {
             stacked: true,
@@ -93,7 +65,7 @@ export class BarChartComponent implements OnInit, AfterViewInit {
             stacked: true,
             ticks: {
               callback: (value, index, values) => {
-                  return this.formatter.format(value as number);
+                return this.customFormatter(value as number);
               }
             }
           }
@@ -109,6 +81,25 @@ export class BarChartComponent implements OnInit, AfterViewInit {
     minimumFractionDigits: 0, 
     maximumFractionDigits: 0, 
   });
+
+  customFormatter = (value: number) => {
+    if (window.innerWidth <= 768) { 
+      if (value >= 1000000) {
+        return `${(value / 1000000).toFixed(1)}M`; 
+      }
+      if (value >= 1000) {
+        return `${(value / 1000).toFixed(0)}K`; 
+      }
+      return `${value} Ft`;
+    } else {
+      return new Intl.NumberFormat('hu-HU', {
+        style: 'currency',
+        currency: 'HUF',
+        minimumFractionDigits: 0, 
+        maximumFractionDigits: 0, 
+      }).format(value);
+    }
+  };
 
 }
 

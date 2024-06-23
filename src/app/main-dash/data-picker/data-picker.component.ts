@@ -17,6 +17,7 @@ export class DataPickerComponent {
   onToggle(option: any) {
     option.isToggled = !option.isToggled;
     this.onToggleEmitter.emit(option);
+    console.log(option)
   }
 
   onToggleAll(checked: MouseEvent) {
