@@ -3,14 +3,14 @@
     <img
       *ngIf="!toggled"
       (click)="toggleSidebar()"
-      src="../../assets/images/logo.png"
+      src="assets/images/logo.png"
       alt="Carsup logo"
     />
 
     <img
       *ngIf="toggled"
       (click)="toggleSidebar()"
-      src="../../assets/images/icon.png"
+      src="assets/images/icon.png"
       alt="Carsup logo"
     />
   </div>
@@ -54,7 +54,7 @@
 
 <div class="mobile-navbar" [ngClass]="{ closed: !mobileToggled }">
   <div class="logo">
-    <img src="../../assets/images/logo.png" alt="Carsup logo" />
+    <img src="assets/images/logo.png" alt="Carsup logo" />
   </div>
   <label class="menu" for="menuToggle">
     <input type="checkbox" id="menuToggle" (click)="toggleMobileSidebar()" />
