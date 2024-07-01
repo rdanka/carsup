@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
-import { OverallStatistics } from 'src/app/models/overall-statistics.model';
+import { GrossNetPrice, OverallStatistics } from 'src/app/models/overall-statistics.model';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -33,8 +33,8 @@ export class OverallStatsComponent {
     this.lostTime$ = this._dataService.getBlockedTime().pipe(
       map((data: OverallStatistics) => data.ertek)
     );
-    this.totalIncome$ = this._dataService.getPartProfit().pipe(
-      map((data: OverallStatistics) => this.formatter.format(data.ertek.netto_ertek))
+    this.totalIncome$ = this._dataService.getPartData().pipe(
+      map((data: OverallStatistics) => this.formatter.format((data.ertek as GrossNetPrice).netto_ertek ))
     );
   }
 

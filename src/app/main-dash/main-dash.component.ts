@@ -25,9 +25,11 @@ export class MainDashComponent implements OnInit {
   }
 
   onToggle(person: any, type: string) {
+    
     switch (type) {
       case 'mechanic':
         if (person.isToggled) {
+          console.log('person')
           this.toggledMechanics$.next([...this.toggledMechanics$.getValue(), person.nev]);
         } else {
           this.toggledMechanics$.next(this.toggledMechanics$.getValue().splice(this.toggledMechanics$.getValue().indexOf(person.name), 1));
@@ -44,6 +46,7 @@ export class MainDashComponent implements OnInit {
       default:
         break;
     }
+    console.log(this.toggledMechanics$.getValue())
 
   }
 
